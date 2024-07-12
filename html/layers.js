@@ -113,6 +113,17 @@ function createBaseLayers() {
             title: 'OpenStreetMap DE',
             type: 'base',
         }));
+        world.push(new ol.layer.Tile({
+            source: new ol.source.OSM({
+                "url" : "https://{a-d}.tile.openstreetmap.fr/{z}/{x}/{y}.png",
+                attributionsCollapsible: false,
+                maxZoom: 20,
+                transition: tileTransition,
+            }),
+            name: 'osmfr',
+            title: 'OpenStreetMap FR',
+            type: 'base',
+        }));
     }
 
     if (false && adsbexchange) {
